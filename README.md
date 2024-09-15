@@ -1,3 +1,105 @@
+# AI Healthcare App
+
+## Overview
+
+The AI Healthcare App is a comprehensive solution designed to assist patients in recording their doctor visits, receiving personalized AI-generated medication recommendations, and visualizing trends in symptoms over time. The application integrates both front-end and back-end components, providing a seamless user experience and robust functionality.
+
+## Features
+
+- **User Authentication:** Secure login system to manage patient access.
+- **Symptom Input:** Allows users to enter symptoms and receive AI-generated medication recommendations.
+- **Data Visualization:** Displays trends and patterns of symptoms over time using interactive graphs.
+- **Language Localization:** Supports multiple languages with dynamic UI updates.
+- **Voice Input (Optional):** (Commented out) Allows users to input symptoms via voice recognition.
+- **Real-time Data Processing:** Backend API for handling recommendation requests and managing data.
+
+## Technologies Used
+
+- **Front-End:** Python, Tkinter for GUI
+- **Back-End:** Flask for API development
+- **Data Visualization:** Matplotlib
+- **Voice Recognition:** SpeechRecognition (Optional)
+- **API Requests:** Requests
+
+## Installation
+
+To get started with the AI Healthcare App, follow these installation steps:
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/yourusername/ai-healthcare-app.git
+   cd ai-healthcare-app
+
+    Install Dependencies
+
+    Create a virtual environment (optional but recommended) and install the required Python packages:
+
+    bash
+
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+pip install -r requirements.txt
+
+If using voice recognition, you’ll also need to install additional packages:
+
+bash
+
+pip install SpeechRecognition pyaudio
+
+Run the Application
+
+Start the Flask server and the Tkinter application:
+
+bash
+
+    python app.py
+
+Usage
+
+    Login: Enter your username and password to access the application.
+    Enter Symptom: Type your symptoms into the input field and click "Get Recommendation" to receive AI-generated medication recommendations.
+    View Trends: Analyze symptom trends using the interactive graphs.
+    Change Language: Select your preferred language from the dropdown menu for localized UI.
+
+API Endpoints
+/recommendation
+
+    Method: POST
+
+    Description: Receives symptom data and returns medication recommendations.
+
+    Request Body:
+
+    json
+
+{
+  "symptoms": "example symptoms"
+}
+
+Response:
+
+json
+
+    {
+      "recommendation": "Recommended Medication for example symptoms: Example Medicine"
+    }
+
+UI Features
+
+    User Authentication: Secure login screen with username and password fields.
+    Symptom Entry: Text field for entering symptoms with a submit button.
+    Data Visualization: Matplotlib-based graphs for visualizing symptom trends.
+    Language Selection: Dropdown menu for changing the UI language.
+    Voice Input (Optional): Button for recording symptoms via voice (currently commented out).
+
+Troubleshooting
+
+    ModuleNotFoundError: Ensure all dependencies are installed. Use pip install -r requirements.txt to install required libraries.
+    Voice Recognition Issues: Verify microphone settings and ensure pyaudio is installed correctly.
+
+--------------------------------------------------------------------------------------------------------------------
+
 Stable Diffusion Bot
 Overview
 
