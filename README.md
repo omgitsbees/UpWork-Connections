@@ -1,3 +1,78 @@
+# NASA GISTEMP Climate Score Prediction using Machine Learning
+
+## Overview
+
+This project predicts NASA's monthly GISTEMP climate score using machine learning algorithms and climate data from public sources. The predictions are updated daily using the latest available data and are accurate to six decimal places. The goal is to deliver the most accurate prediction for the monthly GISTEMP score.
+
+## Features
+
+- **Automated Data Collection**: Scrapes and gathers climate data from published sources daily.
+- **Machine Learning Models**: Uses time series forecasting and regression models for prediction.
+- **Real-Time Updates**: The model runs daily to provide up-to-date predictions based on the latest data.
+- **Precision**: Predicts the GISTEMP score with six decimal place accuracy (e.g., 1.213805).
+- **Final Submission**: The final prediction for the month is captured on the 27th at 8:00 PM EST.
+
+## Project Structure
+
+|-- data/ # Directory to store raw and processed data |-- models/ # Machine learning models and training scripts |-- logs/ # Logs of daily predictions and performance metrics |-- scripts/ | |-- data_scraper.py # Script for scraping climate data | |-- train_model.py # Script for training the machine learning model | |-- predict.py # Script for running daily predictions |-- README.md
+
+markdown
+
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.x
+- Climate data sources (e.g., NOAA, NASA)
+- API keys (if applicable for data sources)
+
+### Installation
+
+1. **Clone the repository**:
+
+```bash
+git clone https://github.com/yourusername/nasa-climate-prediction.git
+cd nasa-climate-prediction
+
+    Install dependencies:
+
+bash
+
+pip install -r requirements.txt
+
+Running the Project
+
+    Collect Data:
+
+Run the data scraper to gather the most recent climate data:
+
+bash
+
+python scripts/data_scraper.py
+
+    Train the Model:
+
+Train the machine learning model with the collected data:
+
+bash
+
+python scripts/train_model.py
+
+    Make Predictions:
+
+Schedule the script to run daily for real-time predictions:
+
+bash
+
+python scripts/predict.py
+
+Results
+
+The final prediction for NASA's GISTEMP score for each month will be logged with six decimal places accuracy. Predictions are submitted privately for evaluation against NASA's official score.
+
+-------------------------------------------------------------------------------------------------------
+
 Motorcycle Real-Time Status and Fault Monitoring System
 
 This project is designed to monitor real-time status indicators and fault warnings from a motorcycle's CAN Bus or OBD-II interface. It displays key parameters such as engine status, battery voltage, oil pressure, and more via a user-friendly graphical interface. The system logs critical faults and warnings for future reference.
