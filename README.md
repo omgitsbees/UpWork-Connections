@@ -1,3 +1,61 @@
+Marketplace Product Parser
+
+This Python program allows users to scrape product details from one marketplace and upload them to another marketplace by simply providing a product link and category name. It automates the process of transferring product data between two marketplaces.
+Features
+
+    Scrapes product name, price, and description from the provided marketplace link.
+    Allows user input for product link and category name.
+    Automatically uploads the parsed product data to your marketplace.
+
+Requirements
+
+    Python 3.x
+    requests library
+    beautifulsoup4 library
+
+Installation
+
+    Clone the repository to your local machine:
+
+    bash
+
+git clone https://github.com/yourusername/marketplace-product-parser.git
+cd marketplace-product-parser
+
+Install the required Python libraries:
+
+bash
+
+    pip install -r requirements.txt
+
+Usage
+
+    Run the script:
+
+    bash
+
+python parser.py
+
+Enter the product link and the category name when prompted:
+
+bash
+
+    Enter the product link: https://example.com/product/123
+    Enter the category name: Electronics
+
+    The program will fetch the product details and upload them to your marketplace.
+
+Example
+
+If you input:
+
+    Product link: https://example.com/product/123
+    Category name: Electronics
+
+The program will scrape the product name, price, and description from the provided link and upload it under the Electronics category to your marketplace.
+
+-----------------------------------------------------------------------------------------------------------
+
 # AI Healthcare App
 
 ## Overview
