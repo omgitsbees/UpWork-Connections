@@ -1,3 +1,90 @@
+Image Annotation and Object Detection
+
+This project demonstrates the process of image annotation and object detection using Python, TensorFlow, and OpenCV. The primary objective is to teach and automate object detection with a pre-trained YOLO model and also to provide guidance on manual image annotation using the LabelImg tool.
+Table of Contents
+
+    Introduction
+    Features
+    Installation
+    Usage
+    Image Annotation
+    Object Detection
+    Contributing
+    License
+
+Introduction
+
+This repository contains Python code that:
+
+    Annotates images manually using the LabelImg tool.
+    Performs object detection using TensorFlow’s pre-trained YOLO model.
+
+The project aims to help users understand and work with image annotation and object detection techniques in computer vision.
+Features
+
+    Image Annotation: Annotate images using the LabelImg tool.
+    Object Detection: Detect objects in images using TensorFlow's YOLO model.
+    Visualization: Visualize detected objects with bounding boxes and labels.
+    Pre-trained Model: Leverages a pre-trained YOLO model for object detection.
+
+Installation
+Clone the repository
+
+bash
+
+git clone https://github.com/your-username/image-annotation-object-detection.git
+cd image-annotation-object-detection
+
+Install dependencies
+
+You need Python 3.6+ and the following dependencies. You can install them using pip:
+
+bash
+
+pip install tensorflow opencv-python pillow matplotlib
+
+Install LabelImg for image annotation
+
+LabelImg is a tool for manually annotating images. You can install it using pip:
+
+bash
+
+pip install labelImg
+
+Running LabelImg
+
+bash
+
+labelImg
+
+Use LabelImg to annotate your images and save the annotations.
+Usage
+Object Detection
+
+    Load Images: The code supports loading images in .jpg or .png format.
+    Object Detection: You can perform object detection on your images using the following command:
+
+python
+
+python object_detection.py --image path_to_your_image.jpg
+
+Running the Object Detection Code
+
+    Replace "path_to_your_image.jpg" in the sample code with the path to your own image.
+    Run the script to see detected objects in your image.
+
+Image Annotation
+
+To annotate images, use the LabelImg tool:
+
+bash
+
+labelImg
+
+Save your annotations in XML format for future training or further processing.
+
+-----------------------------------------------------------------------------------------------------------
+
 Video Processing Tool with AI-Based Object Removal
 
 This Python project processes video files to remove unwanted objects such as captions, emojis, or images. It leverages AI and image inpainting techniques to provide a clean, high-quality output video.
