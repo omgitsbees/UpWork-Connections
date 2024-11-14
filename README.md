@@ -715,6 +715,146 @@ function scanFolderAndSaveToSheet() {
   }
 }
 
+--------------------------------------------------------------------------------------------------
+
+Advanced Trading Application
+
+This project is a comprehensive trading application written in Python that includes backtesting, real-time trading, a machine learning prediction model, performance tracking, a user interface, and API integration. The app is designed to support multiple users, providing risk management, stop-loss/take-profit capabilities, and more.
+Features
+
+    Backtesting Engine: Test trading strategies using historical data from Yahoo Finance with custom parameters for moving average crossovers, stop-loss, and take-profit.
+    Real-Time Trading: Execute trades in real-time using the Alpaca API.
+    Machine Learning Prediction: Use an LSTM model for predictive analytics based on historical price data.
+    Performance Tracking and Reporting: Save backtesting results and track portfolio performance.
+    Dash Web Interface: Interactive dashboard for visualizing trading strategies and portfolio performance.
+    Flask REST API: RESTful API for external trade requests.
+    Multi-User Support: Basic user management with SQLite for storing user credentials and settings.
+
+Tech Stack
+
+    Backtesting: Backtrader
+    Market Data: Yahoo Finance and Alpaca API
+    Machine Learning: TensorFlow for building LSTM models
+    User Interface: Dash and Flask for the UI and REST API
+    Database: SQLite for multi-user management
+
+Getting Started
+Prerequisites
+
+    Python 3.7+
+    Alpaca API Key for live trading
+    Dependencies: see the requirements.txt section below.
+
+Installation
+
+    Clone the repository:
+
+git clone https://github.com/yourusername/AdvancedTradingApp.git
+cd AdvancedTradingApp
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+Set up your Alpaca API credentials:
+
+    Replace the placeholder values in the script:
+
+        api_key = "your_alpaca_api_key"
+        api_secret = "your_alpaca_api_secret"
+
+    Database Setup:
+        The SQLite database will automatically set up user tables for multi-user functionality. Simply run the app, and it will create users.db.
+
+Requirements
+
+Create a requirements.txt file with these dependencies:
+
+backtrader
+yfinance
+tensorflow
+alpaca-trade-api
+dash
+flask
+pandas
+
+Project Structure
+
+.
+├── app.py                 # Main application script
+├── requirements.txt       # Python dependencies
+├── README.md              # Project README
+├── users.db               # SQLite database for user management
+├── backtest_report.json   # JSON file for backtesting reports
+└── ...
+
+Usage
+Running the Application
+
+    Flask API: Start the Flask server to enable REST API access.
+
+python app.py
+
+Dash Dashboard: View the Dash dashboard at http://127.0.0.1:8050/, where you can visualize strategy performance and portfolio data.
+
+Backtesting: Run the backtesting feature to test strategies on historical data:
+
+run_backtest()
+
+Live Trading: Execute trades in real time by calling the trade_live(symbol) function with a stock ticker (e.g., "AAPL").
+
+Machine Learning Model: Train an LSTM model for predictive analytics and use the predictions in your strategies:
+
+    create_lstm_model()
+
+Example Commands
+
+    Execute backtesting:
+
+run_backtest()
+
+Place a real-time trade:
+
+    trade_live("AAPL")
+
+API Endpoints
+Trade Endpoint
+
+Make trade requests via the REST API:
+
+POST /trade
+
+Body:
+
+{
+  "symbol": "AAPL",
+  "side": "buy",
+  "quantity": 1
+}
+
+Response:
+
+{
+  "status": "order placed"
+}
+
+Troubleshooting
+
+    Alpaca API Issues: Make sure to use the correct API base URL and credentials. Test with the paper trading environment if you're new to Alpaca.
+    TensorFlow Compatibility: Ensure you have a compatible TensorFlow version for your Python environment.
+    SQLite Database Lock: Avoid running the app multiple times simultaneously to prevent SQLite locks.
+
+Future Enhancements
+
+    Enhanced strategy customization
+    Additional ML models (Random Forest, SVM)
+    More interactive dashboard visualizations
+    Expanded support for alternative data sources
+
+License
+
+MIT License
+
 Customization
 
     You can customize the parsing logic based on the structure of your PDFs. Modify the extract_field_1 and extract_field_2 functions to match the fields you're extracting.
