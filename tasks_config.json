@@ -1,0 +1,25 @@
+{
+    "tasks": [
+        {
+            "name": "send_sms",
+            "params": {
+                "message": "Hello, this is an automated SMS!",
+                "to": "+1234567890"
+            }
+        },
+        {
+            "name": "send_email",
+            "params": {
+                "subject": "Automated Report",
+                "content": "This is your daily report.",
+                "to": "example@example.com"
+            }
+        },
+        {
+            "name": "search_data",
+            "params": {
+                "query": "example query"
+            }
+        }
+    ]
+}
