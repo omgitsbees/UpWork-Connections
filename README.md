@@ -859,3 +859,112 @@ Customization
 
     You can customize the parsing logic based on the structure of your PDFs. Modify the extract_field_1 and extract_field_2 functions to match the fields you're extracting.
     For the Python version, you can use different libraries for Excel export like xlsxwriter or openpyxl depending on your needs.
+
+--------------------------------------------------------------------------------------------------
+
+Task Automation Framework
+
+This Python script enables task automation using services such as Twilio for SMS, SendGrid for email, and a placeholder function for data queries. Tasks are defined in a JSON configuration file, and the script executes them sequentially while logging progress and errors.
+Features
+
+    SMS Notifications: Sends SMS messages via Twilio.
+    Email Notifications: Sends emails using SendGrid.
+    Custom Data Queries: Placeholder function for future data integration.
+    Task Sequencing: Executes tasks sequentially as defined in a configuration file.
+    Logging: Logs task execution status for monitoring and debugging.
+
+Prerequisites
+1. Install Dependencies
+
+Ensure you have Python 3.6+ and the following libraries installed:
+
+pip install twilio sendgrid
+
+2. Twilio and SendGrid Accounts
+
+    Twilio: Create an account and obtain your Account SID, Auth Token, and a Twilio phone number.
+    SendGrid: Create an account and obtain an API key.
+
+Setup
+
+    Clone the Repository
+
+git clone <repository-url>
+cd <repository-folder>
+
+Add Configuration File
+Create a tasks_config.json file in the project directory with the following format:
+
+{
+    "tasks": [
+        {
+            "name": "send_sms",
+            "params": {
+                "to": "+1234567890",
+                "message": "Hello from Twilio!"
+            }
+        },
+        {
+            "name": "send_email",
+            "params": {
+                "to": "recipient@example.com",
+                "subject": "Greetings!",
+                "content": "<h1>Hello from SendGrid!</h1>"
+            }
+        },
+        {
+            "name": "search_data",
+            "params": {
+                "query": "example search query"
+            }
+        }
+    ]
+}
+
+Update API Credentials
+Replace placeholders in the script with your actual Twilio and SendGrid credentials:
+
+    TWILIO_SID = "your_twilio_account_sid"
+    TWILIO_TOKEN = "your_twilio_auth_token"
+    SENDGRID_API_KEY = "your_sendgrid_api_key"
+
+Usage
+
+Run the script to execute the tasks defined in the tasks_config.json file:
+
+python task_automation.py
+
+Functions Overview
+1. load_task_config(file_path: str) -> Dict[str, Any]
+
+Loads task configurations from a JSON file.
+2. send_sms(params: Dict[str, Any])
+
+Sends an SMS message using Twilio.
+3. send_email(params: Dict[str, Any])
+
+Sends an email using SendGrid.
+4. search_data(params: Dict[str, Any])
+
+Performs a placeholder data query.
+5. execute_task(task: Dict[str, Any])
+
+Executes a specific task based on its type and parameters.
+6. run_task_sequence(config: Dict[str, Any])
+
+Runs a sequence of tasks defined in the configuration.
+Logs
+
+Logs are stored in the console with the following format:
+
+2024-11-15 14:22:30 - INFO - Starting task: send_sms
+2024-11-15 14:22:31 - INFO - SMS sent successfully: SMXXXXXXXXXXXXXXXXXX
+2024-11-15 14:22:31 - INFO - Starting task: send_email
+2024-11-15 14:22:32 - INFO - Email sent successfully: 202 Accepted
+
+Contribution
+
+Feel free to fork the repository and submit pull requests to enhance the script.
+License
+
+This project is licensed under the MIT License.
