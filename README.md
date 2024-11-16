@@ -1,4 +1,115 @@
-Certainly! Below is a sample README.md for your project that you can use for GitHub.
+# VFX Pulling Automation Script
+
+A Python script designed to automate the process of pulling VFX assets from specified file directories. The script identifies and processes assets in **EXR format**, logs errors, sends notifications, and integrates with Airtable for tracking pulled resources.
+
+---
+
+## Features
+- **Automated Asset Pulling**: Processes multiple directories to locate and copy VFX assets in `.exr` format.
+- **Error Logging**: Logs issues encountered during execution into a log file (`vfx_pull.log`).
+- **Notifications**: Sends email notifications upon task completion or when an error occurs.
+- **Airtable Integration**: Logs pulled files and directory statuses into Airtable for seamless tracking.
+- **Configurable Directories**: Supports multiple source directories for flexibility.
+
+---
+
+## Prerequisites
+
+Ensure you have the following installed:
+- Python 3.8+
+- Required Python libraries:
+  ```bash
+  pip install airtable-python-wrapper
+
+Additional Setup:
+
+    Airtable API Key and Table:
+        Create an Airtable base to log pulled files.
+        Generate an Airtable API key from your Airtable account (Airtable API Key Documentation).
+    SMTP Configuration:
+        Ensure you have an SMTP server for sending email notifications.
+        Obtain credentials and configuration details from your email provider.
+
+Configuration
+
+Edit the config dictionary in the script to match your setup:
+
+config = {
+    "directories": ["/path/to/dir1", "/path/to/dir2"],  # Directories to search for EXR files
+    "destination_dir": "/path/to/save/exr",  # Destination folder for EXR files
+    "airtable_api_key": "your_airtable_api_key",
+    "airtable_base_id": "your_base_id",
+    "airtable_table_name": "VFX Logs",
+    "notification_email": "youremail@example.com",
+    "smtp_server": "smtp.example.com",
+    "smtp_port": 587,
+    "smtp_username": "your_smtp_username",
+    "smtp_password": "your_smtp_password",
+}
+
+Usage
+
+    Clone the Repository:
+    Usage
+
+    Clone the Repository:
+
+Run the Script:
+python vfx_automation.py
+
+Logging
+
+The script generates a vfx_pull.log file in the project directory. This file captures:
+
+    Processed files and directories.
+    Errors and warnings.
+    Script status updates.
+
+Advanced Features
+Airtable Integration
+
+The script uses the Airtable API to log:
+
+    Pulled asset filenames.
+    Source directories.
+    Directory statuses (e.g., missing).
+
+Notifications
+
+Email notifications are sent for:
+
+    Task completion.
+    Errors encountered during processing.
+
+Example Output
+Log File (vfx_pull.log):
+2024-11-16 10:00:00 - INFO - Starting VFX pulling script.
+2024-11-16 10:01:15 - INFO - Copied /path/to/dir1/shot1.exr to /path/to/save/exr/shot1.exr
+2024-11-16 10:02:00 - WARNING - Directory does not exist: /path/to/missing_dir
+2024-11-16 10:05:00 - INFO - VFX pulling script completed.
+
+Troubleshooting
+Missing SMTP Emails
+
+    Verify SMTP credentials and ensure the SMTP server allows programmatic access.
+
+Airtable Issues
+
+    Check the API key, Base ID, and Table name in the config dictionary.
+
+EXR Files Not Found
+
+    Ensure directories contain files with .exr extensions.
+
+License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+Contributions
+
+Contributions are welcome! Feel free to submit a pull request or open an issue for suggestions or improvements.
+
+--------------------------------------------------------------------------------------------------------------------------------------
 
 # Social Media Engagement Analyzer
 
