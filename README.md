@@ -1210,9 +1210,66 @@ Logs are stored in the console with the following format:
 2024-11-15 14:22:31 - INFO - Starting task: send_email
 2024-11-15 14:22:32 - INFO - Email sent successfully: 202 Accepted
 
-Contribution
+--------------------------------------------------------------------------------------------------------------------------------------
 
-Feel free to fork the repository and submit pull requests to enhance the script.
-License
+Muscle Analysis Model
 
-This project is licensed under the MIT License.
+This repository contains a TensorFlow-based pipeline for building, training, optimizing, and deploying a deep learning model for muscle analysis. The project includes dataset loading, preprocessing, augmentation, training a DenseNet121-based model, optimizing it for TensorFlow Lite, performing inference, and generating classification reports.
+Features
+
+    Model Architecture: Fine-tunes DenseNet121 for muscle group classification.
+    Data Augmentation: Applies transformations to enhance dataset diversity.
+    Optimization: Converts the trained model to TensorFlow Lite for faster inference.
+    Inference Pipeline: Supports predictions on new images with post-processing for detailed muscle group analysis.
+    Reporting: Generates classification reports for performance evaluation.
+
+Installation
+Requirements
+
+    Python 3.6+
+    TensorFlow 2.0+
+    OpenCV
+    NumPy
+    scikit-learn
+
+Install dependencies with:
+
+pip install tensorflow opencv-python-headless numpy scikit-learn
+
+Usage
+1. Dataset Preparation
+
+Organize the dataset into directories. Each directory corresponds to a muscle group. Update the parse_label function to extract labels from filenames based on your dataset structure.
+
+def parse_label(file_name):
+    # Define logic to parse label from file name or directory structure
+    raise NotImplementedError("Define label parsing logic here.")
+
+2. Training
+
+Run the script with the path to your dataset:
+
+python muscle_analysis.py
+
+The dataset is split into training (80%) and validation (20%) sets. Adjust the num_classes variable to match the number of muscle groups.
+3. Model Optimization
+
+The trained model is converted to TensorFlow Lite format for optimized inference.
+4. Inference
+
+Test the model with a new image:
+
+sample_image_path = "path_to_sample_image.jpg"
+
+Ensure muscle_names corresponds to your dataset labels.
+5. Reports
+
+Generate a classification report for validation or test data:
+
+generate_reports(model, test_images, test_labels)
+
+File Structure
+
+    muscle_analysis.py: Main script with functions for dataset preprocessing, model training, optimization, and inference.
+    muscle_analysis_model.tflite: Optimized TensorFlow Lite model (generated after training).
+
