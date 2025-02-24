@@ -1,0 +1,34 @@
+{
+    "trades": [
+        {
+            "timestamp": "2025-02-01T12:00:00Z",
+            "coin": "BTC",
+            "action": "LONG",
+            "entry_price": 30000,
+            "exit_price": 32000,
+            "profit": 2000,
+            "stop_loss": 29000,
+            "take_profit": 33000,
+            "bb_length": 20,
+            "bb_multiplier": 2.2
+        },
+        {
+            "timestamp": "2025-02-02T14:00:00Z",
+            "coin": "ETH",
+            "action": "SHORT",
+            "entry_price": 2000,
+            "exit_price": 1950,
+            "profit": 50,
+            "stop_loss": 2050,
+            "take_profit": 1900,
+            "bb_length": 20,
+            "bb_multiplier": 2.2
+        }
+    ],
+    "learning_parameters": {
+        "bb_length": 20,
+        "bb_multiplier": 2.2,
+        "stop_loss_adjustment": 0.02,
+        "take_profit_adjustment": 0.05
+    }
+}
