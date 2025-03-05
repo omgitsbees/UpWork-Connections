@@ -1,0 +1,14 @@
+# Multi-Agent AI System for Financial Insights & Marketing Automation
+
+This project implements a multi-agent AI system that integrates with a website focused on personal finance, tax planning, marketing insights, and customer lead generation. The system is built using Flask for the API, and various machine learning models for the agents.
+
+## Features
+
+- **Financial Insights Agent**: Analyzes user financial data and provides savings predictions.
+- **Tax Planning Agent**: Calculates tax liabilities based on user income and deductions.
+- **Marketing Analytics Agent**: Analyzes marketing campaign performance.
+- **Lead Generation Agent**: Generates potential customer leads based on lead scores.
+- **Security**: Implements token-based authentication for secure API access.
+- **Orchestrator**: Manages the interactions between different agents.
+
+## Project Structure
